@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\BoardGameController;
 use App\Http\Controllers\API\GuestController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,4 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::apiResource("/guest", GuestController::class);
 
-Route::apiResource("/boardgame", null);
+Route::apiResource("/boardgame", BoardGameController::class);
