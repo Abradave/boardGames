@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreBoardGameRequest;
+use App\Http\Requests\UpdateBoardGameRequest;
 use App\Models\BoardGame;
 use Illuminate\Http\Request;
 
@@ -44,9 +45,15 @@ class BoardGameController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateBoardGameRequest $request, string $id)
     {
-        //
+        $board_game = BoardGame::find($id);
+        if(is_null($board_game)){
+            return response()->json(["message" => "Board game not found with id: $id"], 404);
+        }
+        $board_game->fill($request->all());
+        $board_game->save();
+        return $board_game;
     }
 
     /**

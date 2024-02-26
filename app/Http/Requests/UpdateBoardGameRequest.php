@@ -11,7 +11,7 @@ class UpdateBoardGameRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,10 @@ class UpdateBoardGameRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            "bg_name" => "string|max:200",
+            "min_players" => "integer|min:1",
+            "max_players" => "integer",
+            "description" => "string|max:30000"
         ];
     }
 }

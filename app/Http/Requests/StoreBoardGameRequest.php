@@ -22,7 +22,7 @@ class StoreBoardGameRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "bg_name" => "required|string|unique:board_games,bg_name",
+            "bg_name" => "required|string|max:200|unique:board_games,bg_name",
             "min_players" => "required|integer|min:1",
             "max_players" => "required|integer",
             "description" => "required|string|max:30000"
