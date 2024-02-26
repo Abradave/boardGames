@@ -22,7 +22,7 @@ class StoreGuestRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "g_username" => "required|string|max:100",
+            "g_username" => "required|string|max:100|unique:guests,g_username",
             "g_password" => "required|string|max:100",
             "g_name" => "required|string|max:100",
             "g_email" => "required|email|max:200|unique:guests,g_email",
