@@ -11,7 +11,7 @@ class StoreBoardGameRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,10 @@ class StoreBoardGameRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            "bg_name" => "required|string|unique:board_games,bg_name",
+            "min_players" => "required|integer|min:1",
+            "max_players" => "required|integer",
+            "description" => "required|string|max:30000"
         ];
     }
 }
