@@ -61,6 +61,11 @@ class BoardGameController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $board_game = BoardGame::find($id);
+        if(is_null($board_game)){
+            return response()->json(["message" => "Board game not found with id: $id"], 404);
+        }
+        $board_game->delete();
+        return response()->noContent();
     }
 }
