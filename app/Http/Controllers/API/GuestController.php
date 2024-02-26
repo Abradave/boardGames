@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreGuestRequest;
+use App\Http\Requests\UpdateGuestRequest;
 use App\Models\Guest;
 use GMP;
 use Illuminate\Http\Request;
@@ -46,9 +47,15 @@ class GuestController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateGuestRequest $request, string $id)
     {
-        //
+        $guest = Guest::find($id);
+        if(is_null($guest)){
+            return response()->json(["message" => "Guest not found with id: $id"], 404);
+        }
+        $guest->fill($request->all());
+        $guest->save();
+        return $guest;
     }
 
     /**

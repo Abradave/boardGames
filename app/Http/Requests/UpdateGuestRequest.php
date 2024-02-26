@@ -11,7 +11,7 @@ class UpdateGuestRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,11 @@ class UpdateGuestRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            "g_username" => "string|max:100",
+            "g_password" => "string|max:100",
+            "g_name" => "string|max:100",
+            "g_email" => "email|max:200",
+            "g_phone_number" => "string|max:20",
         ];
     }
 }
