@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\BoardGame;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,6 @@ class BoardGameSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        BoardGame::factory(15)->create();
     }
 }

@@ -17,7 +17,10 @@ class BoardGameFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            "bg_name" => fake()->unique()->word(),
+            "min_players" => fake()->numberBetween(1, 3),
+            "max_players" => fake()->numberBetween(4, 10),
+            "description" => fake()->paragraph(3)
         ];
     }
 }
