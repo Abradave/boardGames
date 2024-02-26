@@ -34,7 +34,11 @@ class BoardGameController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $board_game = BoardGame::find($id);
+        if(is_null($board_game)){
+            return response()->json(["message" => "Board game not found with id: $id"], 404);
+        }
+        return $board_game;
     }
 
     /**
