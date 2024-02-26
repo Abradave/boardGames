@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Models\BoardGame;
 use Illuminate\Http\Request;
 
 class BoardGameController extends Controller
@@ -12,7 +13,8 @@ class BoardGameController extends Controller
      */
     public function index()
     {
-        //
+        $board_games = BoardGame::all();
+        return response()->json($board_games, 200);
     }
 
     /**
