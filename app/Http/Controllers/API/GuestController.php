@@ -23,7 +23,11 @@ class GuestController extends Controller
      */
     public function store(StoreGuestRequest $request)
     {
-        //
+        //Guest::create($request->all());
+        $guest = new Guest();
+        $guest->fill($request->all());
+        $guest->save();
+        return response()->json($guest, 201);
     }
 
     /**
