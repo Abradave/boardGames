@@ -23,7 +23,10 @@ class BoardGameController extends Controller
      */
     public function store(StoreBoardGameRequest $request)
     {
-
+        $board_game = new BoardGame();
+        $board_game->fill($request->all());
+        $board_game->save();
+        return response()->json($board_game, 201);
     }
 
     /**
