@@ -21,4 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::apiResource("/guest", GuestController::class);
 
-Route::apiResource("/boardgame, null");
+Route::apiResource("/boardgame", null);
