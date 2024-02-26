@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreGuestRequest;
 use App\Models\Guest;
+use GMP;
 use Illuminate\Http\Request;
 
 class GuestController extends Controller
@@ -35,7 +36,11 @@ class GuestController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $guest = Guest::find($id);
+        if(is_null($guest)){
+            return response()->json(["message" => "Guest not found with id: $id"], 404);
+        }
+        return $guest;
     }
 
     /**
