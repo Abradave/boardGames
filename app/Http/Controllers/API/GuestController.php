@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Models\Guest;
 use Illuminate\Http\Request;
 
 class GuestController extends Controller
@@ -12,7 +13,8 @@ class GuestController extends Controller
      */
     public function index()
     {
-        //
+        $guests = Guest::all();
+        return response()->json($guests, 200);
     }
 
     /**
