@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreGuestRequest;
 use App\Models\Guest;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,7 @@ class GuestController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreGuestRequest $request)
     {
         //
     }

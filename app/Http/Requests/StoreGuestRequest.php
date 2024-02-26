@@ -11,7 +11,7 @@ class StoreGuestRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,11 @@ class StoreGuestRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            "g_username" => "required|string|max:100",
+            "g_password" => "required|string|max:100",
+            "g_name" => "required|string|max:100",
+            "g_email" => "required|email|max:200|unique:guests,g_email",
+            "g_phone_number" => "required|string|max:20",
         ];
     }
 }
