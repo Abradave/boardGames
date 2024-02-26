@@ -63,6 +63,11 @@ class GuestController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $guest = Guest::find($id);
+        if(is_null($guest)){
+            return response()->json(["message" => "Guest not found with id: $id"], 404);
+        }
+        $guest->delete();
+        return response()->noContent();
     }
 }
