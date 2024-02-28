@@ -11,7 +11,7 @@ class UpdateEmployeeRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,9 @@ class UpdateEmployeeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            "e_name" => "string|max:100",
+            "e_email" => "email|max:200",
+            "e_password" => "string|max:100",
         ];
     }
 }

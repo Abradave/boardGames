@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreEmployeeRequest;
+use App\Http\Requests\UpdateEmployeeRequest;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 
@@ -45,9 +46,15 @@ class EmployeeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateEmployeeRequest $request, string $id)
     {
-        //
+        $employee = Employee::find($id);
+        if(is_null($employee)){
+            return response()->json(["message" => "Employee not found with id: $id"], 404);
+        }
+        $employee->fill($request->all());
+        $employee->save();
+        return $employee;
     }
 
     /**
