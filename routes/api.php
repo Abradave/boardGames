@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\AppointmentController;
 use App\Http\Controllers\API\BoardGameController;
 use App\Http\Controllers\API\EmployeeController;
 use App\Http\Controllers\API\GuestController;
@@ -27,4 +28,4 @@ Route::apiResource("/boardgame", BoardGameController::class);
 
 Route::apiResource("/employee", EmployeeController::class);
 
-Route::apiResource("/appointment", null);
+Route::apiResource("/appointment", AppointmentController::class);
