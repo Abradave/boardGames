@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
+            $table->dateTime("appointment");
+            $table->bigInteger("employee_id");
+            $table->boolean("booked");
+            $table->bigInteger("guest_id");
+            $table->bigInteger("board_game_id");
+            $table->integer("number_of_players");
             $table->timestamps();
         });
     }
