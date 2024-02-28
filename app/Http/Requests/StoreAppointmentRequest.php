@@ -2,6 +2,8 @@
 
 namespace App\Http\Requests;
 
+use Brick\Math\BigInteger;
+use DateTime;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreAppointmentRequest extends FormRequest
@@ -11,7 +13,7 @@ class StoreAppointmentRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +24,12 @@ class StoreAppointmentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            "appointment" => "required|dateTime|min:now",
+            "employee_id" => "required|bigInteger",
+            "booked" => "boolean",
+            "guest_id" => "bigInteger",
+            "board_game_id" => "bigInteger",
+            "number_of_players" => "integer"
         ];
     }
 }
