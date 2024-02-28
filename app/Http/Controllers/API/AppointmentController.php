@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreAppointmentRequest;
+use App\Http\Requests\UpdateAppointmentRequest;
 use App\Models\Appointment;
 use Illuminate\Http\Request;
 
@@ -44,9 +45,15 @@ class AppointmentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateAppointmentRequest $request, string $id)
     {
-        //
+        $appointment = Appointment::find($id);
+        if(is_null($appointment)){
+            return response()->json(["message" => "Appointment not found with id: $id"], 404);
+        }
+        $appointment->fill($request->all());
+        $appointment->save();
+        return $appointment;
     }
 
     /**

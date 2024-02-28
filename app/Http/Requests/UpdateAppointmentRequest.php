@@ -11,7 +11,7 @@ class UpdateAppointmentRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,12 @@ class UpdateAppointmentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            "appointment" => "date_format:Y-m-d H:i:s",
+            "employee_id" => "integer",
+            "booked" => "boolean",
+            "guest_id" => "integer",
+            "board_game_id" => "integer",
+            "number_of_players" => "integer"
         ];
     }
 }
