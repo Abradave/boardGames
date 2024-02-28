@@ -24,11 +24,11 @@ class StoreAppointmentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "appointment" => "required|dateTime|min:now",
-            "employee_id" => "required|bigInteger",
+            "appointment" => "required|date_format:Y-m-d H:i:s",
+            "employee_id" => "required|integer",
             "booked" => "boolean",
-            "guest_id" => "bigInteger",
-            "board_game_id" => "bigInteger",
+            "guest_id" => "integer",
+            "board_game_id" => "integer",
             "number_of_players" => "integer"
         ];
     }
