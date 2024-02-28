@@ -61,6 +61,11 @@ class AppointmentController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $appointment = Appointment::find($id);
+        if(is_null($appointment)){
+            return response()->json(["message" => "Appointment not found with id: $id"], 404);
+        }
+        $appointment->delete();
+        return response()->noContent();
     }
 }
