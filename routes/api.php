@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\BoardGameController;
+use App\Http\Controllers\API\EmployeeController;
 use App\Http\Controllers\API\GuestController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -24,4 +25,4 @@ Route::apiResource("/guest", GuestController::class);
 
 Route::apiResource("/boardgame", BoardGameController::class);
 
-Route::apiResource("/employee", null);
+Route::apiResource("/employee", EmployeeController::class);
