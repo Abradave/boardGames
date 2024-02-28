@@ -34,7 +34,11 @@ class AppointmentController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $appointment = Appointment::find($id);
+        if(is_null($appointment)){
+            return response()->json(["message" => "Appointment not found with id: $id"], 404);
+        }
+        return $appointment;
     }
 
     /**
