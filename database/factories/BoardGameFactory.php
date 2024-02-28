@@ -18,7 +18,7 @@ class BoardGameFactory extends Factory
     {
         return [
             "bg_name" => fake()->unique()->word(),
-            "min_players" => fake()->numberBetween(1, 3),
+            "min_players" => fake()->numberBetween(1, 2),
             "max_players" => fake()->numberBetween(4, 10),
             "description" => fake()->paragraph(3)
         ];

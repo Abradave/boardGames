@@ -17,7 +17,12 @@ class AppointmentFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            "appointment" => fake()->dateTimeBetween('now', '+2 weeks'),
+            "employee_id" => fake()->numberBetween(1, 15),
+            "booked" => fake()->numberBetween(1, 1),
+            "guest_id" => fake()->numberBetween(1, 15),
+            "board_game_id" => fake()->numberBetween(1, 15),
+            "number_of_players" => fake()->numberBetween(2, 4)
         ];
     }
 }
