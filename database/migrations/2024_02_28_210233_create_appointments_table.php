@@ -16,9 +16,9 @@ return new class extends Migration
             $table->dateTime("appointment");
             $table->bigInteger("employee_id");
             $table->boolean("booked");
-            $table->bigInteger("guest_id");
-            $table->bigInteger("board_game_id");
-            $table->integer("number_of_players");
+            $table->bigInteger("guest_id")->nullable();
+            $table->bigInteger("board_game_id")->nullable();
+            $table->integer("number_of_players")->nullable();
             $table->timestamps();
         });
     }
