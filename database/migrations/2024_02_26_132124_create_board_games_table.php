@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string("bg_name", 200)->unique();
             $table->integer("min_players");
             $table->integer("max_players");
-            $table->text("description", 30000);
+            $table->text("description");
             $table->timestamps();
         });
     }
