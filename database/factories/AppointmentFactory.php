@@ -2,6 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\BoardGame;
+use App\Models\Employee;
+use App\Models\Guest;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,12 +19,15 @@ class AppointmentFactory extends Factory
      */
     public function definition(): array
     {
+        $allEmployeeIds = Employee::all()->pluck('id');
+        $allGuestsIds = Guest::all()->pluck('id');
+        $allBoardGamesIds = BoardGame::all()->pluck('id');
         return [
             "appointment" => fake()->dateTimeBetween('now', '+2 weeks'),
-            "employee_id" => fake()->numberBetween(1, 15),
+            "employee_id" => fake()->randomElement($allEmployeeIds),
             "booked" => fake()->numberBetween(1, 1),
-            "guest_id" => fake()->numberBetween(1, 15),
-            "board_game_id" => fake()->numberBetween(1, 15),
+            "guest_id" => fake()->randomElement($allGuestsIds),
+            "board_game_id" => fake()->randomElement($allBoardGamesIds),
             "number_of_players" => fake()->numberBetween(2, 4)
         ];
     }

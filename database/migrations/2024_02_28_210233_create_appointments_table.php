@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\BoardGame;
+use App\Models\Employee;
+use App\Models\Guest;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -14,10 +17,10 @@ return new class extends Migration
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
             $table->dateTime("appointment");
-            $table->bigInteger("employee_id");
+            $table->foreignIdFor(Employee::class)->constrained();
             $table->boolean("booked");
-            $table->bigInteger("guest_id")->nullable();
-            $table->bigInteger("board_game_id")->nullable();
+            $table->foreignIdFor(Guest::class)->nullable()->constrained();
+            $table->foreignIdFor(BoardGame::class)->nullable()->constrained();
             $table->integer("number_of_players")->nullable();
             $table->timestamps();
         });
