@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LoginGuestRequest;
 use App\Http\Requests\StoreGuestRequest;
 use App\Http\Requests\UpdateGuestRequest;
 use App\Models\Guest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class GuestController extends Controller
 {
@@ -22,14 +24,36 @@ class GuestController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreGuestRequest $request)
+    public function guestregister(StoreGuestRequest $request)
     {
-        //Guest::create($request->all());
-        $guest = new Guest();
-        $guest->fill($request->all());
-        $guest->save();
+        $guest = Guest::create([
+            "g_username" => $request ->g_username,
+            "g_password" => Hash::make($request ->g_password),
+            "g_name" => $request ->g_name,
+            "g_email" => $request ->g_email,
+            "g_phone_number" => $request ->g_phone_number
+        ]);
         return response()->json($guest, 201);
     }
+
+    public function guestlogin(LoginGuestRequest $request)
+    {
+        $guest = Guest::where("g_email", $request -> g_email)->first();
+
+        if (!$guest || !Hash::check($request -> g_password, $guest -> g_password)) {
+            return response() -> json(["message" => "Incorrect username or password"], 401);
+        }
+
+        $token = $guest -> createToken("AuthToken")->plainTextToken;
+
+        //return $guest;
+
+        return response()->json(["token" => $token]);
+    }
+
+    //public function guestlogout(Request $request){
+
+    //}
 
     /**
      * Display the specified resource.

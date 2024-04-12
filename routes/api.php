@@ -22,7 +22,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource("/guest", GuestController::class);
+Route::get("/guest", [GuestController::class, "index"]);
+Route::post("/guestregister", [GuestController::class, "guestregister"]);
+Route::post("/guestlogin", [GuestController::class, "guestlogin"]);
+Route::post("/guestlogout", [GuestController::class, "guestlogout"]);
 
 Route::apiResource("/boardgame", BoardGameController::class);
 
