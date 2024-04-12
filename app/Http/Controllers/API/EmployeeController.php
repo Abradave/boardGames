@@ -24,10 +24,12 @@ class EmployeeController extends Controller
      */
     public function employeeRegister(StoreEmployeeRequest $request)
     {
-        $employee = new Employee();
-        $employee->fill($request->all());
-        $employee->save();
-        return response()->json($employee, 201);
+        //$employee = new Employee();
+        //$employee->fill($request->all());
+        //$employee->save();
+        //return response()->json($employee, 201);
+
+        
     }
 
     public function employeeLogin()
@@ -37,7 +39,7 @@ class EmployeeController extends Controller
 
     public function employeeLogout()
     {
-        
+
     }
 
     /**
