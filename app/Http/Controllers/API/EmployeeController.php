@@ -22,12 +22,22 @@ class EmployeeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreEmployeeRequest $request)
+    public function employeeRegister(StoreEmployeeRequest $request)
     {
         $employee = new Employee();
         $employee->fill($request->all());
         $employee->save();
         return response()->json($employee, 201);
+    }
+
+    public function employeeLogin()
+    {
+
+    }
+
+    public function employeeLogout()
+    {
+        
     }
 
     /**

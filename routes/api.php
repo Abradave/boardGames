@@ -26,6 +26,11 @@ Route::post("/guestregister", [GuestController::class, "guestregister"]);
 Route::post("/guestlogin", [GuestController::class, "guestlogin"]);
 Route::post("/guestlogout", [GuestController::class, "guestlogout"]);
 
+Route::post("employeeregister", [EmployeeController::class, "employeeRegister"]);
+Route::post("employeelogin", [EmployeeController::class, "employeeLogin"]);
+Route::post("employeelogout", [EmployeeController::class, "employeeLogout"]);
+
+
 Route::apiResource("/boardgame", BoardGameController::class);
 
 Route::apiResource("/employee", EmployeeController::class);
