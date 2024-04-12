@@ -18,11 +18,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+Route::middleware('auth:sanctum')->get('/guest', function (Request $request) {
     return $request->user();
 });
 
-Route::get("/guest", [GuestController::class, "index"]);
 Route::post("/guestregister", [GuestController::class, "guestregister"]);
 Route::post("/guestlogin", [GuestController::class, "guestlogin"]);
 Route::post("/guestlogout", [GuestController::class, "guestlogout"]);
