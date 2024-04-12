@@ -19,22 +19,26 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('auth:sanctum')->get('/guest', function (Request $request) {
-    return $request->guest();
+    return $request->user();
 });
 
 Route::post("/guestregister", [GuestController::class, "guestregister"]);
 Route::post("/guestlogin", [GuestController::class, "guestlogin"]);
 Route::post("/guestlogout", [GuestController::class, "guestlogout"]);
 
+Route::middleware('auth:sanctum')->get('/employee', function (Request $request) {
+    return $request->user();
+});
+
 Route::post("employeeregister", [EmployeeController::class, "employeeRegister"]);
 Route::post("employeelogin", [EmployeeController::class, "employeeLogin"]);
-Route::post("employeelogout", [EmployeeController::class, "employeeLogout"]);
+Route::post("employeelogout", [EmployeeController::class, "employeeLogout"])->middleware('auth:sanctum');
 
 
 Route::apiResource("/boardgame", BoardGameController::class);
 
-Route::apiResource("/employee", EmployeeController::class);
+//Route::apiResource("/employee", EmployeeController::class);
 
 Route::apiResource("/appointment", AppointmentController::class);
 
-Route::apiResource("/guest", GuestController::class);
+//Route::apiResource("/guest", GuestController::class);

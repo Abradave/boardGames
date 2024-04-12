@@ -54,7 +54,10 @@ class EmployeeController extends Controller
 
     public function employeeLogout(Request $request)
     {
-
+        $employee = auth()->user();
+        /** @disregard P1013 Undefined method */
+        $currentToken = $employee->currentAccessToken();
+        $currentToken->delete();
     }
 
     /**

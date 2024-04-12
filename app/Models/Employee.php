@@ -9,7 +9,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 class Employee extends Model
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory;
 
     /**
      * The attributes that are mass assignable.
