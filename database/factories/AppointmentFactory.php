@@ -20,15 +20,15 @@ class AppointmentFactory extends Factory
     public function definition(): array
     {
         $allEmployeeIds = Employee::all()->pluck('id');
-        $allGuestsIds = Guest::all()->pluck('id');
-        $allBoardGamesIds = BoardGame::all()->pluck('id');
+        //$allGuestsIds = Guest::all()->pluck('id');
+        //$allBoardGamesIds = BoardGame::all()->pluck('id');
         return [
             "appointment" => fake()->dateTimeBetween('now', '+2 weeks'),
             "employee_id" => fake()->randomElement($allEmployeeIds),
-            "booked" => fake()->numberBetween(1, 1),
-            "guest_id" => fake()->randomElement($allGuestsIds),
-            "board_game_id" => fake()->randomElement($allBoardGamesIds),
-            "number_of_players" => fake()->numberBetween(2, 4)
+            "booked" => fake()->numberBetween(0, 0),
+            //"guest_id" => fake()->randomElement($allGuestsIds),
+            //"board_game_id" => fake()->randomElement($allBoardGamesIds),
+            //"number_of_players" => fake()->numberBetween(2, 4)
         ];
     }
 }
