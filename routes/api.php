@@ -31,3 +31,5 @@ Route::apiResource("/boardgame", BoardGameController::class);
 Route::apiResource("/employee", EmployeeController::class);
 
 Route::apiResource("/appointment", AppointmentController::class);
+
+Route::apiResource("/guest", GuestController::class);
