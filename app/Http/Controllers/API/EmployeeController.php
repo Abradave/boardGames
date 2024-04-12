@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LoginEmployeeRequest;
 use App\Http\Requests\StoreEmployeeRequest;
 use App\Http\Requests\UpdateEmployeeRequest;
 use App\Models\Employee;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class EmployeeController extends Controller
 {
@@ -29,15 +31,21 @@ class EmployeeController extends Controller
         //$employee->save();
         //return response()->json($employee, 201);
 
+        $employee = Employee::create([
+            "e_name" =>$request->e_name,
+            "e_email" =>$request->e_email,
+            "e_password" => Hash::make($request->e_password)
+        ]);
+        return $employee;
+
+    }
+
+    public function employeeLogin(LoginEmployeeRequest $request)
+    {
         
     }
 
-    public function employeeLogin()
-    {
-
-    }
-
-    public function employeeLogout()
+    public function employeeLogout(Request $request)
     {
 
     }
