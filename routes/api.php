@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('auth:sanctum')->get('/guest', function (Request $request) {
-    return $request->user();
+    return $request->guest();
 });
 
 Route::post("/guestregister", [GuestController::class, "guestregister"]);
