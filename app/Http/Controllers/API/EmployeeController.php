@@ -25,9 +25,11 @@ class EmployeeController extends Controller
      */
     public function store(StoreEmployeeRequest $request)
     {
-        $employee = new Employee();
-        $employee->fill($request->all());
-        $employee->save();
+        $employee = Employee::create([
+            "e_name" =>$request->e_name,
+            "e_email" =>$request->e_email,
+            "e_password" => Hash::make($request->e_password)
+        ]);
         return response()->json($employee, 201);
     }
 
