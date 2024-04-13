@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\AppointmentController;
 use App\Http\Controllers\API\BoardGameController;
+use App\Http\Controllers\API\EmployeeAuthController;
 use App\Http\Controllers\API\EmployeeController;
 use App\Http\Controllers\API\GuestController;
 use Illuminate\Http\Request;
@@ -30,9 +31,9 @@ Route::middleware('auth:sanctum')->get('/employee', function (Request $request) 
     return $request->user();
 });
 
-Route::post("employeeregister", [EmployeeController::class, "employeeRegister"]);
-Route::post("employeelogin", [EmployeeController::class, "employeeLogin"]);
-Route::post("employeelogout", [EmployeeController::class, "employeeLogout"])->middleware('auth:sanctum');
+Route::post("employeeregister", [EmployeeAuthController::class, "employeeRegister"]);
+Route::post("employeelogin", [EmployeeAuthController::class, "employeeLogin"]);
+Route::post("employeelogout", [EmployeeAuthController::class, "employeeLogout"])->middleware('auth:sanctum');
 
 
 Route::apiResource("/boardgame", BoardGameController::class);
