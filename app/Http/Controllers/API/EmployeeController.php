@@ -82,7 +82,12 @@ class EmployeeController extends Controller
         if(is_null($employee)){
             return response()->json(["message" => "Employee not found with id: $id"], 404);
         }
-        $employee->fill($request->all());
+        //$employee->fill($request->all());
+        $employee->fill([
+            "e_name" =>$request->e_name,
+            "e_email" =>$request->e_email,
+            "e_password" => Hash::make($request->e_password)
+        ]);
         $employee->save();
         return $employee;
     }
