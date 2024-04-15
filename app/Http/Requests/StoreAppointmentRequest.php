@@ -27,9 +27,9 @@ class StoreAppointmentRequest extends FormRequest
             "appointment" => "required|date_format:Y-m-d H:i:s",
             "employee_id" => "required|integer",
             "booked" => "boolean",
-            //"guest_id" => "integer",
-            //"board_game_id" => "integer",
-            //"number_of_players" => "integer"
+            "guest_id" => "nullable|integer",
+            "board_game_id" => "nullable|integer",
+            "number_of_players" => "nullable|integer"
         ];
     }
 }
