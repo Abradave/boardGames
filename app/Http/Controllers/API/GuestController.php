@@ -51,9 +51,23 @@ class GuestController extends Controller
         return response()->json(["token" => $token]);
     }
 
-    //public function guestlogout(Request $request){
+    public function guestlogout(Request $request)
+    {
+        $guest = auth()->user();
+        /** @disregard P1013 Undefined method */
+        $currentToken = $guest->currentAccessToken();
+        $currentToken->delete();
+    }
 
-    //}
+    public function authGuestData(Request $request)
+    {
+        $guest = auth()->user();
+        /** @disregard P1013 Undefined method */
+        $currentToken = $guest->currentAccessToken();
+        return response()->json($guest, 201);
+    }
+
+    
 
     /**
      * Display the specified resource.

@@ -19,22 +19,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/guest', function (Request $request) {
-    return $request->user();
-});
+
 
 Route::post("/guestregister", [GuestController::class, "guestregister"]);
 Route::post("/guestlogin", [GuestController::class, "guestlogin"]);
 Route::post("/guestlogout", [GuestController::class, "guestlogout"]);
+Route::get("/guestauthdata", [GuestController::class, "authGuestData"])->middleware('auth:sanctum');
 
-//Route::middleware('auth:sanctum')->get('/employee', function (Request $request) {
-//    return $request->user();
-//});
 
-Route::post("employeeregister", [EmployeeAuthController::class, "employeeRegister"]);
-Route::post("employeelogin", [EmployeeAuthController::class, "employeeLogin"]);
-Route::post("employeelogout", [EmployeeAuthController::class, "employeeLogout"])->middleware('auth:sanctum');
-Route::get("employeeAuthData", [EmployeeAuthController::class, "authEmployeeData"])->middleware('auth:sanctum');
+Route::post("/employeeregister", [EmployeeAuthController::class, "employeeRegister"]);
+Route::post("/employeelogin", [EmployeeAuthController::class, "employeeLogin"]);
+Route::post("/employeelogout", [EmployeeAuthController::class, "employeeLogout"])->middleware('auth:sanctum');
+Route::get("/employeeauthdata", [EmployeeAuthController::class, "authEmployeeData"])->middleware('auth:sanctum');
 
 Route::apiResource("/boardgame", BoardGameController::class);
 
