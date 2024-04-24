@@ -23,7 +23,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::post("/guestregister", [GuestController::class, "guestregister"]);
 Route::post("/guestlogin", [GuestController::class, "guestlogin"]);
-Route::post("/guestlogout", [GuestController::class, "guestlogout"]);
+Route::post("/guestlogintoken", [GuestController::class, "guestlogintoken"]);
+Route::post("/guestlogout", [GuestController::class, "guestlogout"])->middleware('auth:sanctum');;
 Route::get("/guestauthdata", [GuestController::class, "authGuestData"])->middleware('auth:sanctum');
 
 

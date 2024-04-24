@@ -25,7 +25,7 @@ class AppointmentFactory extends Factory
         return [
             "appointment" => fake()->dateTimeBetween('now', '+2 weeks'),
             "employee_id" => fake()->randomElement($allEmployeeIds),
-            "booked" => fake()->numberBetween(0, 0),
+            "booked" => fake()->numberBetween(0, 1),
             //"guest_id" => fake()->randomElement($allGuestsIds),
             //"board_game_id" => fake()->randomElement($allBoardGamesIds),
             //"number_of_players" => fake()->numberBetween(2, 4)
