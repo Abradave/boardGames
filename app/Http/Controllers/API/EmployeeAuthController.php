@@ -41,8 +41,8 @@ class EmployeeAuthController extends Controller
     {
         $employee = auth()->user();
         /** @disregard P1013 Undefined method */
-        $currentToken = $employee->currentAccessToken();
-        $currentToken->delete();
+        $employee->currentAccessToken()->delete();
+        return response()->noContent();
     }
 
     public function authEmployeeData(Request $request)
