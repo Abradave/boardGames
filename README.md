@@ -64,7 +64,7 @@ php artisan serve
 
 ## Adatbázis leírása
 
-- ([Adatmodell][def])
+- [Adatmodell][def]
 
 
 [def]: https://github.com/Abradave/boardGames_backend/wiki/Adatmodell
