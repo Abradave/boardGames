@@ -61,3 +61,7 @@ php artisan db:seed
 ```sh
 php artisan serve
 ```
+
+## Adatbázis leírása
+
+- ([Adatmodell] (https://github.com/Abradave/boardGames_backend/wiki/Adatmodell))
