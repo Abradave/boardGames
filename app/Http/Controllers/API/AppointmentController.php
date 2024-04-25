@@ -16,7 +16,19 @@ class AppointmentController extends Controller
     public function index()
     {
         $appointments = Appointment::all();
-        return response()->json($appointments, 200);
+        return response()->json($appointments, 200);     
+    }
+
+    /**
+     * Authentikált munkavállalóhoz tartozó időpontok listázása
+     */
+    public function authEmployeeAppointment()
+    {
+        $employee = auth()->user();
+        $auth_appointments = $employee->appointments;
+        //return Appointment::where("employee_id", $employee->id)->get();
+        //$appointments = Appointment::where("employee_id", $employee->id)->get();
+        return response()->json($auth_appointments, 200);
     }
 
     /**

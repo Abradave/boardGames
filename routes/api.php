@@ -20,23 +20,33 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
+// vendég regisztrálása végpont
 Route::post("/guestregister", [GuestController::class, "guestregister"]);
+//vendég bejelentkezése végpont (token nélkül)
 Route::post("/guestlogin", [GuestController::class, "guestlogin"]);
+//vendég bejelentkezése végpont(tokennel)
 Route::post("/guestlogintoken", [GuestController::class, "guestlogintoken"]);
+//vendég kijelentkezése (tokennel authentikálva)
 Route::post("/guestlogout", [GuestController::class, "guestlogout"])->middleware('auth:sanctum');;
+// bejelentkezett vendég adatai (tokennel authentikálva)
 Route::get("/guestauthdata", [GuestController::class, "authGuestData"])->middleware('auth:sanctum');
 
-
+// munkavállaló regisztrálása végpont
 Route::post("/employeeregister", [EmployeeAuthController::class, "employeeRegister"]);
+//munkavállaló bejelentkezése végpont
 Route::post("/employeelogin", [EmployeeAuthController::class, "employeeLogin"]);
+//munkavállaló kijelentkezése végpont
 Route::post("/employeelogout", [EmployeeAuthController::class, "employeeLogout"])->middleware('auth:sanctum');
+//bejelentkezett munkavállaló adatai
 Route::get("/employeeauthdata", [EmployeeAuthController::class, "authEmployeeData"])->middleware('auth:sanctum');
 
+// társasjátékok végpontja (CRUD)
 Route::apiResource("/boardgame", BoardGameController::class);
-
+// munkavállalók végpontja (CRUD)
 Route::apiResource("/employee", EmployeeController::class);
-
+// időpontok végpontja (CRUD)
 Route::apiResource("/appointment", AppointmentController::class);
-
+// bejelentkezett munkavállaló saját időpontjai
+Route::get("/authemployeeappointment", [AppointmentController::class, "authEmployeeAppointment"])->middleware('auth:sanctum');
+// vendégek végpontja (CRUD)
 Route::apiResource("/guest", GuestController::class);
