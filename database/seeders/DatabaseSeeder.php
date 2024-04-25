@@ -16,11 +16,5 @@ class DatabaseSeeder extends Seeder
         $this->call(BoardGameSeeder::class);
         $this->call(EmployeeSeeder::class);
         $this->call(AppointmentSeeder::class);
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
     }
 }
