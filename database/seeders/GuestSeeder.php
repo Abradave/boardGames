@@ -17,7 +17,7 @@ class GuestSeeder extends Seeder
     {
         Guest::factory(15)->create();
         DB::table('guests')->insert([
-            ['g_username' => 'gipszjakab', 'g_password' => Hash::make("gipsz1234"),'g_name' => 'Gipsz Jakab', 'g_email' => 'gipsz@gipsz.hu','g_phone_number' => '063012345678'],
+            ['g_username' => 'gipszjakab', 'g_password' => Hash::make("gipsz1234"),'g_name' => 'Gipsz Jakab', 'g_email' => 'gipsz@gipsz.hu','g_phone_number' => '063012345678', 'created_at' => \Carbon\Carbon::now(), 'updated_at' => \Carbon\Carbon::now()],
            
         ]);
     }

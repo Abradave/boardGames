@@ -17,8 +17,8 @@ class EmployeeSeeder extends Seeder
     {
         Employee::factory(15)->create();
         DB::table('employees')->insert([
-            ['e_name' => 'Teszt Elek', 'e_email' => 'teszt@gkn.com', 'e_password' => Hash::make('12345678')],
-            ['e_name' => 'Admin Admin', 'e_email' => 'admin@gkn.com', 'e_password' => Hash::make('admin123')]
+            ['e_name' => 'Teszt Elek', 'e_email' => 'teszt@gkn.com', 'e_password' => Hash::make('12345678'), 'created_at' => \Carbon\Carbon::now(), 'updated_at' => \Carbon\Carbon::now()],
+            ['e_name' => 'Admin Admin', 'e_email' => 'admin@gkn.com', 'e_password' => Hash::make('admin123'), 'created_at' => \Carbon\Carbon::now(), 'updated_at' => \Carbon\Carbon::now()]
         ]);
     }
 }
