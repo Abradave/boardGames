@@ -17,7 +17,7 @@ class BoardGameFactory extends Factory
     public function definition(): array
     {
         return [
-            "bg_name" => fake()->unique()->word(),
+            "bg_name" => fake()->unique()->randomElement(['Brass: Birmingham', 'Ark Nova', 'Terraforming Mars', 'Dune: Imperium', 'Gaia Project', 'Civilization', 'Great Western Trail', 'Scythe', 'Wingspan', 'Arnak', 'Everdell', 'Barrage', 'Viticulture', 'Cascadia', 'On Mars', 'Lisboa', 'Azul', 'Teotihuacan', 'Robinson Crusoe', 'Ticket to Ride']),
             "min_players" => fake()->numberBetween(1, 2),
             "max_players" => fake()->numberBetween(4, 10),
             "description" => fake()->paragraph(3)
