@@ -66,5 +66,4 @@ php artisan serve
 
 - [Adatmodell][def]
 
-
 [def]: https://github.com/Abradave/boardGames_backend/wiki/Adatmodell
