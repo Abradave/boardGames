@@ -1,4 +1,7 @@
-# GameKNights 
+
+![GKN_logo](https://github.com/Abradave/boardGames_backend/blob/main/gkn_logo.png)
+
+# GameKNights backend
 
 ## Társasjátékozásra időpontfoglalás projekt backendje
 
