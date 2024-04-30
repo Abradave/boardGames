@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Hash;
 class EmployeeController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of employees.
      */
     public function index()
     {
@@ -21,7 +21,7 @@ class EmployeeController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created employee in storage.
      */
     public function store(StoreEmployeeRequest $request)
     {
@@ -34,7 +34,7 @@ class EmployeeController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified employee.
      */
     public function show(string $id)
     {
@@ -47,7 +47,7 @@ class EmployeeController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified employee in storage.
      */
     public function update(UpdateEmployeeRequest $request, string $id)
     {
@@ -65,7 +65,7 @@ class EmployeeController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified employee from storage.
      */
     public function destroy(string $id)
     {

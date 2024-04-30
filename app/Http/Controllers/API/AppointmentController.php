@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class AppointmentController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the appointments.
      */
     public function index()
     {
@@ -20,7 +20,7 @@ class AppointmentController extends Controller
     }
 
     /**
-     * Authentikált munkavállalóhoz tartozó időpontok listázása
+     * Display a listing of the authenticated employee's appointments.
      */
     public function authEmployeeAppointment()
     {
@@ -32,7 +32,7 @@ class AppointmentController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created appointment in storage.
      */
     public function store(StoreAppointmentRequest $request)
     {
@@ -43,7 +43,7 @@ class AppointmentController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified appointment.
      */
     public function show(string $id)
     {
@@ -55,7 +55,7 @@ class AppointmentController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified appointment in storage.
      */
     public function update(UpdateAppointmentRequest $request, string $id)
     {
@@ -69,7 +69,7 @@ class AppointmentController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified appointment from storage.
      */
     public function destroy(string $id)
     {

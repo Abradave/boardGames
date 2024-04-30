@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Hash;
 class EmployeeAuthController extends Controller
 {
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created employee in storage.
      */
     public function employeeRegister(RegisterEmployeeRequest $request)
     {
@@ -25,6 +25,9 @@ class EmployeeAuthController extends Controller
 
     }
 
+    /**
+     * Employee Log in, create token.
+     */
     public function employeeLogin(LoginEmployeeRequest $request)
     {
         $employee = Employee::where("e_email", $request->e_email)->first();
@@ -37,6 +40,9 @@ class EmployeeAuthController extends Controller
         return response()->json(["token" => $e_token]);
     }
 
+    /**
+     * Employee Log out, remove token from storage.
+     */
     public function employeeLogout(Request $request)
     {
         $employee = auth()->user();
@@ -45,6 +51,9 @@ class EmployeeAuthController extends Controller
         return response()->noContent();
     }
 
+    /**
+     * Display the authenticated employee's data.
+     */
     public function authEmployeeData(Request $request)
     {
         $employee = auth()->user();

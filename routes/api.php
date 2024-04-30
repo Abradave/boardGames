@@ -20,33 +20,35 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-// vendég regisztrálása végpont
+
+//Guest registration
 Route::post("/guestregister", [GuestController::class, "guestregister"]);
-//vendég bejelentkezése végpont (token nélkül)
+//Guest log in (no token created)
 Route::post("/guestlogin", [GuestController::class, "guestlogin"]);
-//vendég bejelentkezése végpont(tokennel)
+//Guest log in (create token)
 Route::post("/guestlogintoken", [GuestController::class, "guestlogintoken"]);
-//vendég kijelentkezése (tokennel authentikálva)
+//Guest log out
 Route::post("/guestlogout", [GuestController::class, "guestlogout"])->middleware('auth:sanctum');;
-// bejelentkezett vendég adatai (tokennel authentikálva)
+//Authenticated guest's data
 Route::get("/guestauthdata", [GuestController::class, "authGuestData"])->middleware('auth:sanctum');
 
-// munkavállaló regisztrálása végpont
+//Employee registration
 Route::post("/employeeregister", [EmployeeAuthController::class, "employeeRegister"]);
-//munkavállaló bejelentkezése végpont
+//Employee log in
 Route::post("/employeelogin", [EmployeeAuthController::class, "employeeLogin"]);
-//munkavállaló kijelentkezése végpont
+//Employee log out
 Route::post("/employeelogout", [EmployeeAuthController::class, "employeeLogout"])->middleware('auth:sanctum');
-//bejelentkezett munkavállaló adatai
+//Authenticated employee's data
 Route::get("/employeeauthdata", [EmployeeAuthController::class, "authEmployeeData"])->middleware('auth:sanctum');
 
-// társasjátékok végpontja (CRUD)
+
+//Board games (CRUD)
 Route::apiResource("/boardgame", BoardGameController::class);
-// munkavállalók végpontja (CRUD)
+//Employees (CRUD)
 Route::apiResource("/employee", EmployeeController::class);
-// időpontok végpontja (CRUD)
+//Appoinmtents (CRUD)
 Route::apiResource("/appointment", AppointmentController::class);
-// bejelentkezett munkavállaló saját időpontjai
+//Authenticated employee's appointments
 Route::get("/authemployeeappointment", [AppointmentController::class, "authEmployeeAppointment"])->middleware('auth:sanctum');
-// vendégek végpontja (CRUD)
+//Guests (CRUD)
 Route::apiResource("/guest", GuestController::class);

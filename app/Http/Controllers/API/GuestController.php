@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Hash;
 class GuestController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the guests.
      */
     public function index()
     {
@@ -22,7 +22,8 @@ class GuestController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Guest register,
+     * Store a newly created guest in storage. 
      */
     public function guestregister(StoreGuestRequest $request)
     {
@@ -36,6 +37,9 @@ class GuestController extends Controller
         return response()->json($guest, 201);
     }
 
+    /**
+     * Guest Log in, create token
+     */
     public function guestlogintoken(LoginGuestRequest $request)
     {
         $guest = Guest::where("g_email", $request -> g_email)->first();
@@ -51,6 +55,9 @@ class GuestController extends Controller
         return response()->json(["token" => $token]);
     }
 
+    /**
+     * Guest Log in, doesn't create token
+     */
     public function guestlogin(LoginGuestRequest $request)
     {
         $guest = Guest::where("g_email", $request -> g_email)->first();
@@ -62,6 +69,9 @@ class GuestController extends Controller
         return $guest;
     }
 
+    /**
+     * Guest Log out
+     */
     public function guestlogout(Request $request)
     {
         $guest = auth()->user();
@@ -70,6 +80,9 @@ class GuestController extends Controller
         $currentToken->delete();
     }
 
+    /**
+     * Get the authenticated guests data
+     */
     public function authGuestData(Request $request)
     {
         $guest = auth()->user();
@@ -81,7 +94,7 @@ class GuestController extends Controller
 
 
     /**
-     * Display the specified resource.
+     * Display the specified guest.
      */
     public function show(string $id)
     {
@@ -93,7 +106,7 @@ class GuestController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified guest in storage.
      */
     public function update(UpdateGuestRequest $request, string $id)
     {
@@ -111,7 +124,7 @@ class GuestController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified guest from storage.
      */
     public function destroy(string $id)
     {

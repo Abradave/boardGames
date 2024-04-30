@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class BoardGameController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the board games.
      */
     public function index()
     {
@@ -20,7 +20,7 @@ class BoardGameController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created board game in storage.
      */
     public function store(StoreBoardGameRequest $request)
     {
@@ -31,7 +31,7 @@ class BoardGameController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified board game.
      */
     public function show(string $id)
     {
@@ -43,7 +43,7 @@ class BoardGameController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified board game in storage.
      */
     public function update(UpdateBoardGameRequest $request, string $id)
     {
@@ -57,7 +57,7 @@ class BoardGameController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified board game from storage.
      */
     public function destroy(string $id)
     {
