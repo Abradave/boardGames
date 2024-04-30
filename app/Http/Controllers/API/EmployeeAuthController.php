@@ -59,6 +59,6 @@ class EmployeeAuthController extends Controller
         $employee = auth()->user();
         /** @disregard P1013 Undefined method */
         $currentToken = $employee->currentAccessToken();
-        return response()->json($employee, 201);
+        return response()->json($employee, 200);
     }
 }

@@ -88,7 +88,7 @@ class GuestController extends Controller
         $guest = auth()->user();
         /** @disregard P1013 Undefined method */
         $currentToken = $guest->currentAccessToken();
-        return response()->json($guest, 201);
+        return response()->json($guest, 200);
     }
 
 
