@@ -1,14 +1,44 @@
 {
-    "client": "Thunder Client",
+    "clientName": "Thunder Client",
     "collectionName": "BoardGameProject",
-    "dateExported": "2024-04-13T19:21:57.243Z",
-    "version": "1.1",
-    "folders": [],
+    "collectionId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
+    "dateExported": "2024-04-30T10:56:00.663Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "2a0abcfa-d7fd-4fb1-ba81-27a2e72b78c4",
+            "name": "api/boardgame",
+            "containerId": "",
+            "created": "2024-04-30T10:44:12.791Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "066bfd88-aeac-499f-a52e-5009c9870c61",
+            "name": "api/appointment",
+            "containerId": "",
+            "created": "2024-04-30T10:44:58.880Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "73130e12-dfc8-4107-be20-1d03d5f21982",
+            "name": "Guests",
+            "containerId": "",
+            "created": "2024-04-30T10:45:50.952Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "ceb50bae-6092-48fa-a408-0343b73a1de1",
+            "name": "Employees",
+            "containerId": "",
+            "created": "2024-04-30T10:46:01.991Z",
+            "sortNum": 40000
+        }
+    ],
     "requests": [
         {
             "_id": "b05cfd2a-67ac-4eb3-967b-d342d6989622",
             "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
-            "containerId": "",
+            "containerId": "2a0abcfa-d7fd-4fb1-ba81-27a2e72b78c4",
             "name": "GET/boardgame",
             "url": "http://localhost:8000/api/boardgame",
             "method": "GET",
@@ -25,9 +55,71 @@
             "tests": []
         },
         {
+            "_id": "a2535e23-9c50-475b-b718-4759e36fb83a",
+            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
+            "containerId": "ceb50bae-6092-48fa-a408-0343b73a1de1",
+            "name": "POST/employeeregister",
+            "url": "http://localhost:8000/api/employeeregister",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-04-12T13:32:18.806Z",
+            "modified": "2024-04-13T18:45:54.969Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"e_name\": \"Valaki\",\n    \"e_email\": \"valaki@gkn.com\",\n    \"e_password\": \"12345678\"\n  }",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "f4597a82-e629-44fd-bd5c-ad28893ad510",
+            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
+            "containerId": "066bfd88-aeac-499f-a52e-5009c9870c61",
+            "name": "GET/appointment",
+            "url": "http://localhost:8000/api/appointment",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-04-13T18:32:16.702Z",
+            "modified": "2024-04-13T18:32:48.921Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "5adc9ff1-036b-407b-9e4b-fbac31d8617f",
+            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
+            "containerId": "73130e12-dfc8-4107-be20-1d03d5f21982",
+            "name": "GET/guest",
+            "url": "http://localhost:8000/api/guest",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-04-13T19:10:11.899Z",
+            "modified": "2024-04-16T12:47:06.468Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
             "_id": "22563fa3-6b4c-4f7d-a1b2-f40d425436ae",
             "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
-            "containerId": "",
+            "containerId": "2a0abcfa-d7fd-4fb1-ba81-27a2e72b78c4",
             "name": "POST/boardgame",
             "url": "http://localhost:8000/api/boardgame",
             "method": "POST",
@@ -49,15 +141,37 @@
             "tests": []
         },
         {
-            "_id": "a2535e23-9c50-475b-b718-4759e36fb83a",
+            "_id": "3d4696b4-17c7-41f2-b55e-d1b7025a7fff",
             "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
-            "containerId": "",
-            "name": "POST/employeeregister",
-            "url": "http://localhost:8000/api/employeeregister",
+            "containerId": "ceb50bae-6092-48fa-a408-0343b73a1de1",
+            "name": "POST/employeelogin",
+            "url": "http://localhost:8000/api/employeelogin",
             "method": "POST",
             "sortNum": 20000,
-            "created": "2024-04-12T13:32:18.806Z",
-            "modified": "2024-04-13T18:45:54.969Z",
+            "created": "2024-04-12T13:54:24.753Z",
+            "modified": "2024-04-28T14:53:32.760Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"e_email\": \"teszt\",\n    \"e_password\": \"12345678\"\n  }",
+                "form": []
+            }
+        },
+        {
+            "_id": "23421797-0d84-4361-9dbd-c777fddf2e50",
+            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
+            "containerId": "066bfd88-aeac-499f-a52e-5009c9870c61",
+            "name": "GET/appointment/id",
+            "url": "http://localhost:8000/api/appointment/1",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-04-13T18:33:22.721Z",
+            "modified": "2024-04-13T18:34:12.665Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -65,21 +179,35 @@
                 }
             ],
             "params": [],
-            "body": {
-                "type": "json",
-                "raw": "{\n    \"e_name\": \"Valaki\",\n    \"e_email\": \"valaki@gkn.com\",\n    \"e_password\": \"12345678\"\n  }",
-                "form": []
-            },
+            "tests": []
+        },
+        {
+            "_id": "921ffd8a-8819-4dc1-84a9-28db3ebd8d4d",
+            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
+            "containerId": "73130e12-dfc8-4107-be20-1d03d5f21982",
+            "name": "GET/guest/id",
+            "url": "http://localhost:8000/api/guest/11",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-04-13T19:11:27.491Z",
+            "modified": "2024-04-13T19:11:46.114Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
             "tests": []
         },
         {
             "_id": "195a7460-4653-4249-8a91-c3d98902afd4",
             "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
-            "containerId": "",
+            "containerId": "2a0abcfa-d7fd-4fb1-ba81-27a2e72b78c4",
             "name": "PUT/boardgame/id",
             "url": "http://localhost:8000/api/boardgame/15",
             "method": "PUT",
-            "sortNum": 20000,
+            "sortNum": 30000,
             "created": "2024-04-13T18:21:57.656Z",
             "modified": "2024-04-13T18:26:43.989Z",
             "headers": [
@@ -97,370 +225,35 @@
             "tests": []
         },
         {
-            "_id": "bc17bd29-580f-46ce-9625-0763f07b6a87",
-            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
-            "containerId": "",
-            "name": "GET/boardgame/id",
-            "url": "http://localhost:8000/api/boardgame/15",
-            "method": "GET",
-            "sortNum": 20000,
-            "created": "2024-04-13T18:28:05.917Z",
-            "modified": "2024-04-13T18:28:55.905Z",
-            "headers": [
-                {
-                    "name": "Accept",
-                    "value": "application/json"
-                }
-            ],
-            "params": [],
-            "body": {
-                "type": "json",
-                "raw": "{\n    \"bg_name\": \"test game\",\n    \"min_players\": 2,\n    \"max_players\": 5,\n    \"description\": \"test description\"\n  }",
-                "form": []
-            },
-            "tests": []
-        },
-        {
-            "_id": "0a60ab8c-23cb-4802-9e6c-478c3b2c00cd",
-            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
-            "containerId": "",
-            "name": "DELETE/boardgame/id",
-            "url": "http://localhost:8000/api/boardgame/15",
-            "method": "DELETE",
-            "sortNum": 20000,
-            "created": "2024-04-13T18:29:07.738Z",
-            "modified": "2024-04-13T18:29:31.405Z",
-            "headers": [
-                {
-                    "name": "Accept",
-                    "value": "application/json"
-                }
-            ],
-            "params": [],
-            "body": {
-                "type": "json",
-                "raw": "{\n    \"bg_name\": \"test game\",\n    \"min_players\": 2,\n    \"max_players\": 5,\n    \"description\": \"test description\"\n  }",
-                "form": []
-            },
-            "tests": []
-        },
-        {
-            "_id": "f4597a82-e629-44fd-bd5c-ad28893ad510",
-            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
-            "containerId": "",
-            "name": "GET/appointment",
-            "url": "http://localhost:8000/api/appointment",
-            "method": "GET",
-            "sortNum": 20000,
-            "created": "2024-04-13T18:32:16.702Z",
-            "modified": "2024-04-13T18:32:48.921Z",
-            "headers": [
-                {
-                    "name": "Accept",
-                    "value": "application/json"
-                }
-            ],
-            "params": [],
-            "tests": []
-        },
-        {
-            "_id": "23421797-0d84-4361-9dbd-c777fddf2e50",
-            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
-            "containerId": "",
-            "name": "GET/appointment/id",
-            "url": "http://localhost:8000/api/appointment/1",
-            "method": "GET",
-            "sortNum": 20000,
-            "created": "2024-04-13T18:33:22.721Z",
-            "modified": "2024-04-13T18:34:12.665Z",
-            "headers": [
-                {
-                    "name": "Accept",
-                    "value": "application/json"
-                }
-            ],
-            "params": [],
-            "tests": []
-        },
-        {
             "_id": "8e676dba-853e-4ada-a509-dd3e03258443",
             "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
-            "containerId": "",
+            "containerId": "066bfd88-aeac-499f-a52e-5009c9870c61",
             "name": "POST/appointment",
             "url": "http://localhost:8000/api/appointment",
             "method": "POST",
-            "sortNum": 20000,
-            "created": "2024-04-13T18:34:39.441Z",
-            "modified": "2024-04-13T18:35:47.673Z",
-            "headers": [
-                {
-                    "name": "Accept",
-                    "value": "application/json"
-                }
-            ],
-            "params": [],
-            "body": {
-                "type": "json",
-                "raw": "{\n  \"appointment\": \"2024-05-14 10:44:43\",\n  \"employee_id\": 11,\n  \"booked\": 0\n}",
-                "form": []
-            },
-            "tests": []
-        },
-        {
-            "_id": "9400ee9f-ee44-4bf5-a471-1dc38d2c4d65",
-            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
-            "containerId": "",
-            "name": "PUT/appointment/id add reservation details",
-            "url": "http://localhost:8000/api/appointment/16",
-            "method": "PUT",
-            "sortNum": 20000,
-            "created": "2024-04-13T18:36:30.033Z",
-            "modified": "2024-04-13T18:37:54.638Z",
-            "headers": [
-                {
-                    "name": "Accept",
-                    "value": "application/json"
-                }
-            ],
-            "params": [],
-            "body": {
-                "type": "json",
-                "raw": "{\n  \"appointment\": \"2024-05-11 10:44:43\",\n  \"employee_id\": 11,\n  \"booked\": 1,\n  \"guest_id\": 1,\n  \"board_game_id\": 1,\n  \"number_of_players\": 3\n}",
-                "form": []
-            },
-            "tests": []
-        },
-        {
-            "_id": "b86971a4-736a-47c4-91cb-fd6b69fa2922",
-            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
-            "containerId": "",
-            "name": "PUT/appointment/id update without reservation details",
-            "url": "http://localhost:8000/api/appointment/15",
-            "method": "PUT",
-            "sortNum": 20000,
-            "created": "2024-04-13T18:38:10.137Z",
-            "modified": "2024-04-13T18:39:44.711Z",
-            "headers": [
-                {
-                    "name": "Accept",
-                    "value": "application/json"
-                }
-            ],
-            "params": [],
-            "body": {
-                "type": "json",
-                "raw": "{\n  \"appointment\": \"2024-06-11 10:44:43\",\n  \"employee_id\": 11,\n  \"booked\": 0\n}",
-                "form": []
-            },
-            "tests": []
-        },
-        {
-            "_id": "f60bcd34-9d58-441f-b21f-7397c01ed16c",
-            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
-            "containerId": "",
-            "name": "DELETE/appointment/id ",
-            "url": "http://localhost:8000/api/appointment/15",
-            "method": "DELETE",
-            "sortNum": 20000,
-            "created": "2024-04-13T18:40:33.601Z",
-            "modified": "2024-04-13T18:41:20.728Z",
-            "headers": [
-                {
-                    "name": "Accept",
-                    "value": "application/json"
-                }
-            ],
-            "params": [],
-            "body": {
-                "type": "json",
-                "raw": "{\n  \"appointment\": \"2024-06-11 10:44:43\",\n  \"employee_id\": 11,\n  \"booked\": 0\n}",
-                "form": []
-            },
-            "tests": []
-        },
-        {
-            "_id": "3d4696b4-17c7-41f2-b55e-d1b7025a7fff",
-            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
-            "containerId": "",
-            "name": "POST/employeelogin",
-            "url": "http://localhost:8000/api/employeelogin",
-            "method": "POST",
             "sortNum": 30000,
-            "created": "2024-04-12T13:54:24.753Z",
-            "modified": "2024-04-12T14:05:47.973Z",
+            "created": "2024-04-13T18:34:39.441Z",
+            "modified": "2024-04-25T07:39:56.771Z",
             "headers": [
                 {
                     "name": "Accept",
                     "value": "application/json"
                 }
             ],
-            "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n    \"e_email\": \"teszt@gkn.com\",\n    \"e_password\": \"12345678\"\n  }",
+                "raw": "{\n  \"appointment\": \"2024-05-16 10:44:43\",\n  \"employee_id\": 16,\n  \"booked\": 0\n}",
                 "form": []
-            },
-            "tests": []
-        },
-        {
-            "_id": "176df3ab-01e3-4541-a461-820abc0ee8bb",
-            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
-            "containerId": "",
-            "name": "POST/employeelogout",
-            "url": "http://localhost:8000/api/employeelogout",
-            "method": "POST",
-            "sortNum": 40000,
-            "created": "2024-04-12T14:13:25.332Z",
-            "modified": "2024-04-13T18:46:39.755Z",
-            "headers": [
-                {
-                    "name": "Accept",
-                    "value": "application/json"
-                }
-            ],
-            "params": [],
-            "auth": {
-                "type": "bearer",
-                "bearer": "5|11SGBjkgc735RVlQIKm972ZalxtXs1lbX5XZ1XM60c93db80"
-            },
-            "tests": []
-        },
-        {
-            "_id": "791775f5-ccf2-4b8c-b153-2bd0bf4ebc34",
-            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
-            "containerId": "",
-            "name": "GET/employee with token",
-            "url": "http://localhost:8000/api/employee",
-            "method": "GET",
-            "sortNum": 50000,
-            "created": "2024-04-12T14:14:54.555Z",
-            "modified": "2024-04-13T18:50:02.120Z",
-            "headers": [
-                {
-                    "name": "Accept",
-                    "value": "application/json"
-                }
-            ],
-            "params": [],
-            "auth": {
-                "type": "bearer",
-                "bearer": "6|EyLqNf19agZBoAtkh46CEyb8EkzONS387oeskgAf2dfb51f0"
-            },
-            "tests": []
-        },
-        {
-            "_id": "c9acb440-b35d-48b7-9a72-218baa9b167f",
-            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
-            "containerId": "",
-            "name": "GET/employee no token",
-            "url": "http://localhost:8000/api/employee",
-            "method": "GET",
-            "sortNum": 60000,
-            "created": "2024-04-13T18:50:42.588Z",
-            "modified": "2024-04-13T18:51:02.467Z",
-            "headers": [
-                {
-                    "name": "Accept",
-                    "value": "application/json"
-                }
-            ],
-            "params": [],
-            "tests": []
-        },
-        {
-            "_id": "d47b61ab-e6ca-45c0-a6dd-9518b705e737",
-            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
-            "containerId": "",
-            "name": "PUT/employee/id",
-            "url": "http://localhost:8000/api/employee/18",
-            "method": "PUT",
-            "sortNum": 70000,
-            "created": "2024-04-13T18:55:17.683Z",
-            "modified": "2024-04-13T18:59:29.687Z",
-            "headers": [
-                {
-                    "name": "Accept",
-                    "value": "application/json"
-                }
-            ],
-            "params": [],
-            "body": {
-                "type": "json",
-                "raw": "  {\n    \"id\": 18,\n    \"e_name\": \"Valaki Valami\",\n    \"e_email\": \"valakivalami@hotmail.com\",\n    \"e_password\": \"12345678\"\n  }",
-                "form": []
-            },
-            "tests": []
-        },
-        {
-            "_id": "51a3b53b-ac42-4a25-91d7-76605d2cec10",
-            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
-            "containerId": "",
-            "name": "DELETE/employee/id",
-            "url": "http://localhost:8000/api/employee/18",
-            "method": "DELETE",
-            "sortNum": 80000,
-            "created": "2024-04-13T19:06:41.779Z",
-            "modified": "2024-04-13T19:08:13.046Z",
-            "headers": [
-                {
-                    "name": "Accept",
-                    "value": "application/json"
-                }
-            ],
-            "params": [],
-            "body": {
-                "type": "json",
-                "raw": "  {\n    \"id\": 18,\n    \"e_name\": \"Valaki Valami\",\n    \"e_email\": \"valakivalami@hotmail.com\",\n    \"e_password\": \"12345678\"\n  }",
-                "form": []
-            },
-            "tests": []
-        },
-        {
-            "_id": "5adc9ff1-036b-407b-9e4b-fbac31d8617f",
-            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
-            "containerId": "",
-            "name": "GET/guest",
-            "url": "http://localhost:8000/api/guest",
-            "method": "GET",
-            "sortNum": 90000,
-            "created": "2024-04-13T19:10:11.899Z",
-            "modified": "2024-04-13T19:10:43.294Z",
-            "headers": [
-                {
-                    "name": "Accept",
-                    "value": "application/json"
-                }
-            ],
-            "params": [],
-            "tests": []
-        },
-        {
-            "_id": "921ffd8a-8819-4dc1-84a9-28db3ebd8d4d",
-            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
-            "containerId": "",
-            "name": "GET/guest/id",
-            "url": "http://localhost:8000/api/guest/11",
-            "method": "GET",
-            "sortNum": 100000,
-            "created": "2024-04-13T19:11:27.491Z",
-            "modified": "2024-04-13T19:11:46.114Z",
-            "headers": [
-                {
-                    "name": "Accept",
-                    "value": "application/json"
-                }
-            ],
-            "params": [],
-            "tests": []
+            }
         },
         {
             "_id": "eeb5a5f3-8dfa-4232-b80d-a8351653dda3",
             "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
-            "containerId": "",
+            "containerId": "73130e12-dfc8-4107-be20-1d03d5f21982",
             "name": "PUT/guest/id",
             "url": "http://localhost:8000/api/guest/11",
             "method": "PUT",
-            "sortNum": 110000,
+            "sortNum": 30000,
             "created": "2024-04-13T19:11:50.319Z",
             "modified": "2024-04-13T19:13:16.740Z",
             "headers": [
@@ -478,13 +271,82 @@
             "tests": []
         },
         {
+            "_id": "08e44d7e-bfd7-4327-b755-1abe4835affd",
+            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
+            "containerId": "ceb50bae-6092-48fa-a408-0343b73a1de1",
+            "name": "GET/authemployeeappointment",
+            "url": "http://localhost:8000/api/authemployeeappointment",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-04-25T07:40:46.900Z",
+            "modified": "2024-04-28T08:14:21.460Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "8|2y1sS6Wd6F3B106rDnZvrLD6ITtvgvbax28Kcged82a7791d"
+            }
+        },
+        {
+            "_id": "bc17bd29-580f-46ce-9625-0763f07b6a87",
+            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
+            "containerId": "2a0abcfa-d7fd-4fb1-ba81-27a2e72b78c4",
+            "name": "GET/boardgame/id",
+            "url": "http://localhost:8000/api/boardgame/15",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-04-13T18:28:05.917Z",
+            "modified": "2024-04-13T18:28:55.905Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"bg_name\": \"test game\",\n    \"min_players\": 2,\n    \"max_players\": 5,\n    \"description\": \"test description\"\n  }",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "9400ee9f-ee44-4bf5-a471-1dc38d2c4d65",
+            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
+            "containerId": "066bfd88-aeac-499f-a52e-5009c9870c61",
+            "name": "PUT/appointment/id add reservation details",
+            "url": "http://localhost:8000/api/appointment/16",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-04-13T18:36:30.033Z",
+            "modified": "2024-04-13T18:37:54.638Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"appointment\": \"2024-05-11 10:44:43\",\n  \"employee_id\": 11,\n  \"booked\": 1,\n  \"guest_id\": 1,\n  \"board_game_id\": 1,\n  \"number_of_players\": 3\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
             "_id": "0717a944-6190-4491-9ceb-d5add8d0b1d8",
             "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
-            "containerId": "",
+            "containerId": "73130e12-dfc8-4107-be20-1d03d5f21982",
             "name": "DELETE/guest/id",
             "url": "http://localhost:8000/api/guest/11",
             "method": "DELETE",
-            "sortNum": 120000,
+            "sortNum": 40000,
             "created": "2024-04-13T19:13:53.027Z",
             "modified": "2024-04-13T19:14:19.119Z",
             "headers": [
@@ -502,13 +364,84 @@
             "tests": []
         },
         {
+            "_id": "25fd3b45-1ff3-40e2-ab09-844b6ec58d0d",
+            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
+            "containerId": "ceb50bae-6092-48fa-a408-0343b73a1de1",
+            "name": "GET/employeeauthdata with token",
+            "url": "http://localhost:8000/api/employeeauthdata",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-04-13T22:46:39.283Z",
+            "modified": "2024-04-19T09:41:12.682Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "31|vzhgi2N2iNswq73ngyFrVyR4fkCANtEXx9LcjaDOf1b4a795"
+            },
+            "tests": []
+        },
+        {
+            "_id": "0a60ab8c-23cb-4802-9e6c-478c3b2c00cd",
+            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
+            "containerId": "2a0abcfa-d7fd-4fb1-ba81-27a2e72b78c4",
+            "name": "DELETE/boardgame/id",
+            "url": "http://localhost:8000/api/boardgame/15",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2024-04-13T18:29:07.738Z",
+            "modified": "2024-04-13T18:29:31.405Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"bg_name\": \"test game\",\n    \"min_players\": 2,\n    \"max_players\": 5,\n    \"description\": \"test description\"\n  }",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "b86971a4-736a-47c4-91cb-fd6b69fa2922",
+            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
+            "containerId": "066bfd88-aeac-499f-a52e-5009c9870c61",
+            "name": "PUT/appointment/id update without reservation details",
+            "url": "http://localhost:8000/api/appointment/15",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2024-04-13T18:38:10.137Z",
+            "modified": "2024-04-13T18:39:44.711Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"appointment\": \"2024-06-11 10:44:43\",\n  \"employee_id\": 11,\n  \"booked\": 0\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
             "_id": "e7105042-b6d5-4289-b109-cb07b8680d8f",
             "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
-            "containerId": "",
+            "containerId": "73130e12-dfc8-4107-be20-1d03d5f21982",
             "name": "POST/guestregister",
             "url": "http://localhost:8000/api/guestregister",
             "method": "POST",
-            "sortNum": 130000,
+            "sortNum": 50000,
             "created": "2024-04-13T19:15:05.807Z",
             "modified": "2024-04-13T19:16:55.961Z",
             "headers": [
@@ -526,13 +459,77 @@
             "tests": []
         },
         {
+            "_id": "44e3a047-c707-411f-9968-0f6d4f308ebe",
+            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
+            "containerId": "ceb50bae-6092-48fa-a408-0343b73a1de1",
+            "name": "GET/employeeauthdata no token",
+            "url": "http://localhost:8000/api/employeeauthdata",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-04-13T23:38:22.896Z",
+            "modified": "2024-04-16T09:07:33.348Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "176df3ab-01e3-4541-a461-820abc0ee8bb",
+            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
+            "containerId": "ceb50bae-6092-48fa-a408-0343b73a1de1",
+            "name": "POST/employeelogout",
+            "url": "http://localhost:8000/api/employeelogout",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2024-04-12T14:13:25.332Z",
+            "modified": "2024-04-24T12:54:18.696Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "3|Mt9BdGHZcUHqelSBf2Q9u6Rr53lqgdqIiD4jNsof512b937b"
+            }
+        },
+        {
+            "_id": "f60bcd34-9d58-441f-b21f-7397c01ed16c",
+            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
+            "containerId": "066bfd88-aeac-499f-a52e-5009c9870c61",
+            "name": "DELETE/appointment/id ",
+            "url": "http://localhost:8000/api/appointment/15",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2024-04-13T18:40:33.601Z",
+            "modified": "2024-04-13T18:41:20.728Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"appointment\": \"2024-06-11 10:44:43\",\n  \"employee_id\": 11,\n  \"booked\": 0\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
             "_id": "366d511a-70d1-4421-a1e4-f312cd5ef781",
             "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
-            "containerId": "",
+            "containerId": "73130e12-dfc8-4107-be20-1d03d5f21982",
             "name": "POST/guestlogin",
             "url": "http://localhost:8000/api/guestlogin",
             "method": "POST",
-            "sortNum": 140000,
+            "sortNum": 60000,
             "created": "2024-04-13T19:17:09.979Z",
             "modified": "2024-04-13T19:18:49.370Z",
             "headers": [
@@ -550,15 +547,15 @@
             "tests": []
         },
         {
-            "_id": "2a484d42-31fd-4789-b0a0-312eed5d91d5",
+            "_id": "c9acb440-b35d-48b7-9a72-218baa9b167f",
             "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
-            "containerId": "",
-            "name": "POST/guestlogout",
-            "url": "http://localhost:8000/api/guestlogout",
-            "method": "POST",
-            "sortNum": 150000,
-            "created": "2024-04-13T19:19:22.559Z",
-            "modified": "2024-04-13T19:19:57.754Z",
+            "containerId": "ceb50bae-6092-48fa-a408-0343b73a1de1",
+            "name": "GET/employee",
+            "url": "http://localhost:8000/api/employee",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-04-13T18:50:42.588Z",
+            "modified": "2024-04-13T18:51:02.467Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -566,11 +563,161 @@
                 }
             ],
             "params": [],
+            "tests": []
+        },
+        {
+            "_id": "2a484d42-31fd-4789-b0a0-312eed5d91d5",
+            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
+            "containerId": "73130e12-dfc8-4107-be20-1d03d5f21982",
+            "name": "POST/guestlogout",
+            "url": "http://localhost:8000/api/guestlogout",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2024-04-13T19:19:22.559Z",
+            "modified": "2024-04-30T10:52:39.395Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
             "auth": {
                 "type": "bearer",
-                "bearer": "7|wlv7aniWrwVHBa3VqyEQnrlPuHZhzBDWGaQIlA4R35eb9ab2"
+                "bearer": "90|yfrkIDj4dIPj2oHL9MY5GxkfnQNzlVPwYR3w4SWVf5b9492e"
+            }
+        },
+        {
+            "_id": "abbd838b-7146-4313-aaee-e243abbf83fd",
+            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
+            "containerId": "73130e12-dfc8-4107-be20-1d03d5f21982",
+            "name": "POST/guestlogintoken (create token)",
+            "url": "http://localhost:8000/api/guestlogintoken",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2024-04-30T10:51:23.876Z",
+            "modified": "2024-04-30T10:51:48.518Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "  {\n    \"g_password\": \"12345678\",\n    \"g_email\": \"teszt@teszt.hu\"\n  }",
+                "form": []
+            }
+        },
+        {
+            "_id": "33901211-7d3e-4f57-8dcf-2adf90cd42d3",
+            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
+            "containerId": "ceb50bae-6092-48fa-a408-0343b73a1de1",
+            "name": "GET/employee/id",
+            "url": "http://localhost:8000/api/employee/1",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2024-04-13T22:39:19.559Z",
+            "modified": "2024-04-13T22:40:02.477Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "487b0cff-aee8-422e-8640-7c3f1c2043cc",
+            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
+            "containerId": "73130e12-dfc8-4107-be20-1d03d5f21982",
+            "name": "GET/guestauthdata with token",
+            "url": "http://localhost:8000/api/guestauthdata",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2024-04-16T12:21:49.863Z",
+            "modified": "2024-04-24T10:55:08.492Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "1|7lspgXMwTNo44sbxrMIPP0TNEyeHejM8BAXoCloZdbcb98eb"
+            }
+        },
+        {
+            "_id": "1bca522d-d3be-49df-8572-c51b448715be",
+            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
+            "containerId": "ceb50bae-6092-48fa-a408-0343b73a1de1",
+            "name": "POST/employee",
+            "url": "http://localhost:8000/api/employee",
+            "method": "POST",
+            "sortNum": 90000,
+            "created": "2024-04-13T22:39:44.496Z",
+            "modified": "2024-04-25T07:38:28.213Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"e_name\": \"Admin\",\n  \"e_email\": \"admin@gkn.com\",\n  \"e_password\": \"12345678\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "d47b61ab-e6ca-45c0-a6dd-9518b705e737",
+            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
+            "containerId": "ceb50bae-6092-48fa-a408-0343b73a1de1",
+            "name": "PUT/employee/id",
+            "url": "http://localhost:8000/api/employee/19",
+            "method": "PUT",
+            "sortNum": 100000,
+            "created": "2024-04-13T18:55:17.683Z",
+            "modified": "2024-04-13T22:45:28.754Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "  {\n    \"e_name\": \"Teszt Munkavállaló\",\n    \"e_email\": \"teszt@hotmail.com\",\n    \"e_password\": \"qwertzui\"\n  }",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "51a3b53b-ac42-4a25-91d7-76605d2cec10",
+            "colId": "713e2461-31b1-46cd-aad8-c8bdd931d98e",
+            "containerId": "ceb50bae-6092-48fa-a408-0343b73a1de1",
+            "name": "DELETE/employee/id",
+            "url": "http://localhost:8000/api/employee/18",
+            "method": "DELETE",
+            "sortNum": 110000,
+            "created": "2024-04-13T19:06:41.779Z",
+            "modified": "2024-04-13T19:08:13.046Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "  {\n    \"id\": 18,\n    \"e_name\": \"Valaki Valami\",\n    \"e_email\": \"valakivalami@hotmail.com\",\n    \"e_password\": \"12345678\"\n  }",
+                "form": []
             },
             "tests": []
         }
-    ]
+    ],
+    "ref": "oDCjqD8G3piIyR7qMEXjwaFAiY8VSDIcBoXJBlelG5T_A4mkmlRzR0z222-nUHxbXS9n15tqV3khrmLdw5O44A"
 }
