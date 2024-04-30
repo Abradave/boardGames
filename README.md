@@ -70,3 +70,13 @@ php artisan serve
 - [Adatmodell][def]
 
 [def]: https://github.com/Abradave/boardGames_backend/wiki/Adatmodell
+
+## Thunderclient tesztelési dokumentáció
+
+[Tesztelések](https://github.com/Abradave/boardGames_backend/blob/main/GameKNights_ThunderClient_test_documentation.pdf)
+
+## GameKnihts Frontendek
+
+- [Android alkalmazás](https://github.com/Abradave/Boardgame_Project_Android)
+- [Asztali alkalmazás](https://github.com/AriaBartha/GameKNights-desktop-application)
+- [Weboldal]()
