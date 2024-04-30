@@ -73,7 +73,7 @@ php artisan serve
 
 ## Thunderclient tesztelési dokumentáció
 
-[Tesztelések](https://github.com/Abradave/boardGames_backend/blob/main/GameKNights_ThunderClient_test_documentation.pdf)
+- [Tesztelések](https://github.com/Abradave/boardGames_backend/blob/main/GameKNights_ThunderClient_test_documentation.pdf)
 
 ## GameKnihts Frontendek
 
