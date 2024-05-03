@@ -79,4 +79,4 @@ php artisan serve
 
 - [Android alkalmazás](https://github.com/Abradave/Boardgame_Project_Android)
 - [Asztali alkalmazás](https://github.com/AriaBartha/GameKNights-desktop-application)
-- [Weboldal]()
+- [Weboldal](https://github.com/bfineodtfg/GameKNights-web-frontend-v2)
